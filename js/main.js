@@ -1,4 +1,6 @@
 
+/* CODIGO DE INDEX */
+
 // Clave de API de TMDB
 const apiKey = 'b20102a953a25b6f42cd5e5660dc717f';
 
@@ -43,6 +45,58 @@ fetch(url)
         console.error('Error al obtener películas populares:', error);
     });
 
+
+
+/* CODIGO CARTELERA */
+
+// Función para obtener el carrito desde el localStorage
+function obtenerCarrito() {
+    const carrito = localStorage.getItem('carrito');
+    return carrito ? JSON.parse(carrito) : [];
+}
+
+// Función para guardar el carrito en el localStorage
+function guardarCarrito(carrito) {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+// Función para agregar un producto al carrito
+function agregarAlCarrito(producto) {
+    const carrito = obtenerCarrito();
+    carrito.push(producto);
+    guardarCarrito(carrito);
+}
+
+// Función para mostrar el carrito en la consola (solo para propósitos de prueba)
+function mostrarCarrito() {
+    const carrito = obtenerCarrito();
+    console.log(carrito);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Agregar evento de clic a los botones "Agregar al carrito"
+    const botonesAgregar = document.querySelectorAll('.btn.btn-primary');
+    botonesAgregar.forEach((boton) => {
+        boton.addEventListener('click', (event) => {
+            // Obtener el título y precio del producto
+            const card = event.target.closest('.card');
+            const titulo = card.querySelector('.card-title').textContent;
+            const precio = card.querySelector('.card-text').textContent.replace('Disfruta de', '').replace(' por solo', '').replace('$', '').trim();
+            
+            // Crear un objeto producto
+            const producto = {
+                titulo: titulo,
+                precio: parseFloat(precio)
+            };
+
+            // Agregar el producto al carrito
+            agregarAlCarrito(producto);
+        });
+    });
+
+    // Mostrar el carrito en la consola (solo para propósitos de prueba)
+    mostrarCarrito();
+});
 
 
 
