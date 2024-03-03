@@ -100,3 +100,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Recuperar el carrito del almacenamiento local al cargar la página
+    const carritoGuardado = localStorage.getItem('carrito');
+    if (carritoGuardado) {
+        const carrito = JSON.parse(carritoGuardado);
+        carrito.forEach(item => {
+            const nuevoProducto = crearProducto(item.titulo, item.precio);
+            const cantidadElemento = nuevoProducto.querySelector('p:nth-child(3)');
+            cantidadElemento.textContent = `Cantidad: ${item.cantidad}`;
+            agregarAlCarrito(nuevoProducto);
+        });
+        calcularTotalCompra();
+    }
+    // Resto del código...
+});
+
