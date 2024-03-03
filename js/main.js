@@ -47,9 +47,9 @@ fetch(url)
 
 
 
-/* CODIGO CARTELERA */
 
-// Función para obtener el carrito desde el localStorage
+
+/* 
 function obtenerCarrito() {
     const carrito = localStorage.getItem('carrito');
     return carrito ? JSON.parse(carrito) : [];
@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         calcularTotalCompra();
     }
-    // Resto del código...
+    
 });
 
+ */
