@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Este proyecto tiene como fin reflejar los aprendazajes 
 adquiridos durante la cursada de Javascript de Coderhouse
 
@@ -5,3 +6,12 @@ Consta de un sitio web el cual tiene como tematica un cine al cual puedes compra
 entradas para el dia entere como medio dia.
 
 Para esto se incluyo un carrito de compras como la conexion a una API de peliculas.
+=======
+Este proyecto tiene como fin reflejar los aprendazajes 
+adquiridos durante la cursada de Javascript de Coderhouse
+
+Consta de un sitio web el cual tiene como tematica un cine al cual puedes comprar
+entradas para el dia entero como para medio dia.
+
+Para esto se incluyo un carrito de compras como la conexion a una API de peliculas.
+>>>>>>> df7209e91059c4d0e3e0d728c30fd739e39e2020
